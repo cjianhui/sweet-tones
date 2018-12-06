@@ -2,17 +2,17 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Nav from './Nav';
 import Router from 'next/router';
-import Nprogress from 'nprogress';
+import NProgress from 'nprogress';
 
 Router.onRouteChangeStart = () => {
-    Nprogress.start();
+    NProgress.start();
 }
 
 Router.onRouteChangeComplete = () => {
-    Nprogress.done();
+    NProgress.done();
 }
 Router.onRouteChangeError = () => {
-    Nprogress.done();
+    NProgress.done();
 }
 
 const Logo = styled.h1`
@@ -49,7 +49,7 @@ const StyledHeader = styled.header`
   }
   
   .sub-bar {
-    displat: grid;
+    display: grid;
     grid-template-columns: 1fr auto;
     border-bottom: 1px solid ${props => props.theme.lightGrey};
   }
@@ -59,11 +59,9 @@ const Header = () => (
     <StyledHeader>
         <div className="bar">
             <Logo>
-            <h1>
                 <Link href="/">
                     <a>Sweet Tones</a>
                 </Link>
-            </h1>
             </Logo>
             <Nav/>
         </div>
